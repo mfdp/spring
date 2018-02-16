@@ -1,14 +1,18 @@
 spring:
     application:
-        name: ComarchECMtext
+        name: learnSpring
     autoconfigure:
         exclude: org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration
 
     datasource:
+        url:
+        username:
+        password:
     jpa:
         database-platform: org.hibernate.dialect.SQLServer2012Dialect
         database: SQL_SERVER
         show-sql: true
+
 security:
     basic:
         enabled: false
