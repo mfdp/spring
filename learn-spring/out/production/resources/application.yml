@@ -5,9 +5,9 @@ spring:
         exclude: org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration
 
     datasource:
-        url: jdbc:sqlserver://10.132.54.147;databaseName=BP_GER-PORTAL-TEST;instanceName=MSSQL2016_IMP;
-        username: BP_GER-PORTAL-TEST
-        password: pass
+        url:
+        username:
+        password: 
     jpa:
         database-platform: org.hibernate.dialect.SQLServer2012Dialect
         database: SQL_SERVER
