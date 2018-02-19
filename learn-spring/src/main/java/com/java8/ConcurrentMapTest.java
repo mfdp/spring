@@ -46,6 +46,22 @@ public class ConcurrentMapTest {
 		map2.put("han", "solo");
 		map2.put("r2", "d2");
 		map2.put("c3", "p0");
+
+
+		String result = map2.reduce(1,
+			(key, value) -> {
+				System.out.println("Transform: " + Thread.currentThread().getName());
+				return key + "=" + value;
+			},
+			(s1, s2) -> {
+				System.out.println("Reduce: " + Thread.currentThread().getName());
+				return s1 + ", " + s2;
+			});
+
+		String result2 = map2.reduce(1, (key, value) -> "[" + key + "]" + value, (e1, e2) -> e1 + "," + e2);
+		String result3 = map2.reduceValues(1, (value) -> value.toUpperCase(), (e1, e2) -> e1 + "," + e2);
+		int resultInt = map2.reduceToInt(1, (key, value) -> key.length(), 0, (e1, e2) -> e1 + e2);
+
 	}
 
 }
